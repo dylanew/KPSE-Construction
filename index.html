@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html style="font-size: 10px;font-family: Roboto, Arial, sans-serif;" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSPE Civil Engineering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <h1>KPSE</h1>
+            <h2>Construction</h2>
+            <p>Pioneering Clean and Sustainable Solutions</p>
+        </div>
+        <div class="menu-icon" id="menu-icon" aria-label="Open menu">&#9776;</div> <!-- "hamburger" icon, represented by Unicode &#9776; -->
+        <nav class="dropdown-nav" id="dropdown-nav">
+            <div class="close-icon" id="close-icon" aria-label="Close menu">&times;</div> <!-- the close icon 'X'-->
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="Slideshow/slide1.jpg" alt="first slide">
+        </div>
+        <div class="slide">
+            <img src="Slideshow/slide2.jpg" alt="second slide">
+        </div>
+        <div class="slide">
+            <img src="Slideshow/slide3.jpg" alt="third slide">
+        </div>
+        <div class="slide">
+            <img src="Slideshow/slide4.jpg" alt="fourth slide">
+        </div>
+
+        <div class="indicator-dots" id="indicator-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+    <main>
+        <div class="row-container">
+            <section id="about" class="section">
+                <h1>About Us</h1>
+                <div class="columns">
+                    <p>At KPSE Construction, we are dedicated to building sustainable and efficient sewage solutions for the future. With extensive experience in civil engineering and a specialization in sewage infrastructure, we are committed to delivering innovative and sustainable solutions that ensure the efficiency and longevity of essential sewage systems.</p>
+
+                    <p>Our team of experts is committed to designing, constructing, and maintaining advanced sewage systems that ensure the health and well-being of communities while protecting the environment.</p>
+                    
+                    <p>Specialising in services such as manhole sealing, cleaning, sewer design, and advanced CCTV surveys, we are confident that we have the expertise and technology to address the unique challenges of every project. Whether it’s protecting aging infrastructure from water ingress or designing state-of-the-art sewage systems, we take a comprehensive approach to meet our clients’ specific needs.</p>
+                    
+                    <p>Guided by a commitment to excellence and sustainability, we work closely with our clients to ensure that our solutions not only solve immediate challenges but also prepare infrastructure for the demands of tomorrow and we aim to uphold the highest standards of quality and reliability in everything we do.</p>
+
+                    <p>With KPSE Construction, you’re not just investing in infrastructure—you’re partnering with a company that values trust, safety, and a cleaner, more resilient future.</p>
+                </div>
+            </section>
+            <img class="row-image" src="photos/about_us.jpg" alt="About us">
+        </div>
+        
+        <div class="row-container">
+            <img class="row-image" src="photos/manhole_install.jpg" alt="About us">
+            <section id="services" class="section">
+                <h1>Our Services</h1>
+                <div class="columns">
+                    <p>
+                        At KPSE Construction, we take pride in offering a comprehensive suite of civil engineering services dedicated to the design, maintenance, and enhancement of sewage and wastewater infrastructure. With a focus on delivering tailored solutions, our expertise allows us to meet the diverse needs of all our clients. From preserving the integrity of manholes to developing efficient sewer systems, our services are designed to ensure reliable performance, sustainability, and long-term value for communities and industries alike. Our expertise spans:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <a href="services.html#sealing"><h2>Manhole sealing</h2></a>
+                            <p>Manhole sealing is a crucial process in maintaining the integrity of sewage systems. It involves applying high-quality seals around manholes to prevent infiltration of groundwater and the escape of gases, odors, and hazardous substances. At KPSE Construction, we have essential experience in using advanced materials and techniques to provide effective manhole sealing solutions that enhance the safety and efficiency of your infrastructure.</p>
+                        </li>
+                        <li>
+                            <a href="services.html#replacement"><h2>Manhole frame and cover replacement</h2></a>
+                            <p>Ensuring the durability and safety of sewage infrastructure begins with secure and reliable manhole frames and covers. At KPSE Construction, we specialise in replacing damaged or outdated frames and covers with robust, high-quality solutions. Our expert team ensures each replacement enhances accessibility, safety, and the overall integrity of your system, safeguarding it against wear, environmental damage, and future maintenance challenges.</p>
+                        </li>
+                        <li>
+                            <a href="services.html#excavation"><h2>Deep excavation design </h2></a>
+                            <p>Deep excavation projects demand meticulous planning and precision engineering to ensure safety and structural stability. At KPSE Construction, we provide advanced deep excavation design services tailored to meet the unique challenges of complex underground projects. By combining innovative techniques with a commitment to quality and compliance, we deliver solutions that prioritise safety, efficiency, and long-term success, even in the most demanding environments.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <section id="contact" class="section">
+            <h1>Contact Us</h1>
+            <p>Your project deserves expert care and attention. Contact KPSE Construction today, and let’s create lasting infrastructure solutions together.</p>
+            <p>If you are interested in our services, please do not hesitate to contact us: <b>+44 7799395703</b> | <a href="mailto:info@kpseconstruction.co.uk"><b>info@kpseconstruction.co.uk</b></a></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="index.html">
+            <img src="KPSE_LOGO.jpeg" alt="Logo" class="footer-logo">
+        </a>
+        <p>Contact us at <b>info@kpseconstruction.co.uk</b> | +44 7799395703</p>
+    </footer>
+
+    <script>
+        //animations for sections
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+    
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                { threshold: 0.1 } // Trigger when 10% of the section is visible
+            );
+    
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+        });
+
+        //functionailty for dropdown menu
+        document.addEventListener("DOMContentLoaded", () =>{
+            const menuIcon = document.getElementById("menu-icon");
+            const dropdownNav = document.getElementById("dropdown-nav");
+            const closeIcon = document.getElementById("close-icon");
+
+            menuIcon.addEventListener("click", () =>{
+                dropdownNav.classList.add("show"); //Adds show class to make menu visible
+                menuIcon.classList.add("hidden"); // Hide the menu icon
+            });
+
+            closeIcon.addEventListener("click", () =>{
+                dropdownNav.classList.remove("show"); //Removes show class to hide menu
+                menuIcon.classList.remove("hidden"); // Show the menu icon
+            });
+        });
+
+        //functionality for slideshow
+        document.addEventListener("DOMContentLoaded", () =>{
+            const slides = document.querySelectorAll(".slide");
+            const dots = document.querySelectorAll(".dot");
+            
+            let currentIndex = 0;
+
+            function showSlide(index){
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === index);
+                });
+
+                dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === index);
+            });
+            }
+
+            function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+            showSlide(currentIndex);
+            }
+
+            // Indicator navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    currentIndex = index;
+                    showSlide(currentIndex);
+                });
+            });
+
+            // Start the slideshow
+            showSlide(currentIndex);
+            setInterval(nextSlide, 3000); // Change slide every 3 seconds
+        });
+    </script>
+    
+</body>
+</html>

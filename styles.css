@@ -1,0 +1,381 @@
+body {
+    font-family: 'Roboto', sans-serif;;
+    margin: 0;
+    padding: 0;
+    background-color: #ab3531;
+}
+
+header {
+    background-color: #ab3531;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    border-bottom: 2px solid black;
+}
+
+.header-text h1{
+    font-size: clamp(2rem, 5vw, 3rem);
+    /* font-size: 3rem; */
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.header-text h2 {
+    font-size: clamp(1.5rem, 4vw, 2.75);
+    /* font-size: 2.75rem;  */
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    margin-top: 10px; 
+    font-size: 1.5rem; 
+    letter-spacing: 1px;
+}
+
+.menu-icon, .close-icon{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    /* font-size: 1.75rem; Icon size */
+    cursor: pointer; /* Pointer cursor to indicate clickable */
+    color: white; 
+    position: absolute; 
+    top: 10px; 
+    right: 20px; 
+    z-index: 1000; 
+}
+
+.menu-icon{
+    display: block; /* Show menu icon by default */
+}
+
+/* Ensure the close icon is always above other elements */
+#close-icon {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    z-index: 10; 
+}
+
+.dropdown-nav {
+    position: fixed; /* Stays in place during scrolling */
+    top: 0;
+    right: 0;
+    height: 100vh; 
+    width: 250px; 
+    background-color: #333; 
+    transform: translateX(100%); 
+    transition: transform 0.3s ease-in-out; 
+    z-index: 999; 
+}
+
+.dropdown-nav ul {
+    list-style: none; 
+    padding: 20px; 
+    margin: 0;
+}
+
+.dropdown-nav li {
+    margin: 20px 0; /* Space between menu items */
+}
+
+.dropdown-nav a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 1.5rem; 
+}
+
+.dropdown-nav.show {
+    transform: translateX(0); 
+}
+
+.menu-icon.hidden{
+    display: none;
+}
+
+.close-icon {
+    display: block; /* Initially visible in the dropdown menu */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    /* font-size: 2rem; */
+    color: white;
+    cursor: pointer;
+}
+
+.dropdown-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.slideshow-container{
+    position: relative;
+    width: 100%;
+    height: 30vw; 
+    overflow: hidden; /* Ensures only one slide is visible at a time */
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        height: 200px; /* Adjust height on smaller screens */
+    }
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide all slides by default */
+    transition: opacity 1s ease-in-out; /* Smooth fade effect */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        height: 200px; /* Adjust height on smaller screens */
+    }
+}
+
+.slide.active {
+    opacity: 1; /* Display the active slide */
+}
+
+/* Indicator dots */
+.indicator-dots {
+    position: absolute;
+    bottom: 15px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px; 
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 50%; /* Round dots */
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: white; /* Solid white for the active dot */
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 75px;
+    background-color: #CA4A45;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.section{
+    display: block;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slight downward movement */
+    transition: opacity 0.6s ease-out, transform 0.9s ease-out;
+}
+
+.section.visible{
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+section{
+    background-color: rgb(250, 240, 213);  
+    border: 3px solid #ab3531;   
+    margin-bottom: 20px;      
+    padding: 15px;            
+    flex: 1;    
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+}
+
+section h1{
+    font-size: 2rem;
+}
+
+section h2{
+    font-size: 1.75rem;
+}
+
+section h3{
+    font-size: 1.5rem;
+}
+
+section h1, section h2 {
+    margin-top: 0;    
+    margin-bottom: 0px;
+    text-decoration: underline;
+}
+
+section p {
+    font-size: 1.55rem;
+    line-height: 1.8; 
+    margin-bottom: 15px; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a img{ /*Targets the image inside any anchor (<a>) tag.*/
+    border: none; 
+    outline: none;
+}
+
+.columns{
+    column-count: 2; /* Number of columns */
+    column-gap: 30px; 
+}
+
+.row-container{
+    display: flex; /* flexbox to align the image and text side by side */
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 20px; 
+}
+
+.row-image{
+    width: 30%; /* take up 30% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* image covers the space without stretching */
+    border: 2px solid black;
+}
+
+.full-image{
+    width: 65%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    background-color: transparent; 
+    border: none;
+    outline: none;
+}
+
+footer a img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.footer-logo{
+    width: clamp(60px, 20vw, 100px);
+    height: auto;
+    /* height: 40px;
+    width: auto; */
+    display: block;
+}
+
+footer p {
+    margin: 0;
+    text-align: center; /* Ensures text is centered in its allocated space */
+    flex-grow: 1; /* Pushes text to the center */
+    font-size: 1.25rem;
+}
+
+footer {
+    background-color: #ab3531;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; /* Positions logo to the left and text to the center */
+}
+
+@media (max-width: 768px) {
+    .header-text {
+        text-align: center;
+    }
+
+    .row-container {
+        flex-direction: column;
+    }
+
+    .columns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .row-image {
+        margin: 0 auto;
+    }
+
+    .dropdown-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .dropdown-nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-icon {
+        font-size: 2rem;
+    }
+
+    .close-icon {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+    }
+
+    p {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .footer-logo {
+        width: 80px;
+        height: auto;
+    }
+}
