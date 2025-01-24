@@ -134,6 +134,7 @@
             const menuIcon = document.getElementById("menu-icon");
             const dropdownNav = document.getElementById("dropdown-nav");
             const closeIcon = document.getElementById("close-icon");
+            const navLinks = dropdownNav.querySelectorAll("a");
 
             menuIcon.addEventListener("click", () =>{
                 dropdownNav.classList.add("show"); //Adds show class to make menu visible
@@ -143,6 +144,13 @@
             closeIcon.addEventListener("click", () =>{
                 dropdownNav.classList.remove("show"); //Removes show class to hide menu
                 menuIcon.classList.remove("hidden"); // Show the menu icon
+            });
+            
+            navLinks.forEach(link =>{
+                link.addEventListener("click", () =>{
+                    dropdownNav.classList.remove("show");
+                    menuIcon.classList.remove("hidden");
+                });
             });
         });
 
